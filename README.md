@@ -21,7 +21,7 @@ Shaoyu Zhang, Chen Chen, and Silong Peng.
 
 
 ## Citation
-If you use use ECM Loss, please cite our paper:
+If you find this work useful in your research, please cite:
 
 	@InProceedings{Zhang_2023_ICCV,
         author    = {Zhang, Shaoyu and Chen, Chen and Peng, Silong},
