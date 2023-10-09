@@ -1,8 +1,7 @@
 # Reconciling Object-Level and Global-Level Objectives for Long-Tail Detection
 
-This repo is the official implementation of the ICCV 2023 paper **Reconciling Object-Level and Global-Level Objectives for Long-Tail Detection**
-\
-Shaoyu Zhang, Chen Chen, and Silong Peng.
+This repo is the official implementation of the ICCV 2023 paper **Reconciling Object-Level and Global-Level Objectives for Long-Tail Detection** 
+by Shaoyu Zhang, Chen Chen, and Silong Peng.
 
 
 ## Requirements 
@@ -23,18 +22,13 @@ cd ROG
 # Create conda environment.
 conda create --name rog python=3.8 -y 
 conda activate rog
-
-# Install PyTorch.
 conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=11.3 -c pytorch -c conda-forge
 
-# Install mmcv and mmdetection
+# Install mmcv and mmdetection.
 pip install -U openmim
 mim install mmcv-full==1.4.0
 pip install mmdet==2.25.2 
 pip install -v -e .
-
-# Install lvis-api. 
-pip install lvis
 ~~~
 
 ### 2. Data
@@ -55,7 +49,35 @@ Please download [LVIS dataset](https://www.lvisdataset.org/dataset). The folder 
     │       ├── ......
 ~~~
 
+### 3. Train
+Use the following commands to train a model.
 
+
+```train
+# Single GPU
+python tools/train.py ${CONFIG_FILE}
+
+# Multi GPU distributed training
+./tools/dist_train.sh ${CONFIG_FILE} ${GPU_NUM} [optional arguments]
+```
+
+For example, to train a Mask R-CNN model for 12 epochs with ROG:
+```train
+# Single GPU
+python tools/train.py configs/rog/rog_r50_sample1e-3_1x.py
+
+# Multi GPU distributed training (for 4 gpus)
+bash ./tools/dist_train.sh configs/rog/rog_r50_sample1e-3_1x.py 4
+```  
+Other configs can be found at ./configs/rog/. 
+
+
+### 4. Inference
+Use the following commands to test a trained model. 
+```test
+bash ./tools/dist_test.sh \
+ configs/rog/rog_r50_sample1e-3_1x.py work_dirs/rog_r50_sample1e-3_1x.py/latest.pth 4 --eval bbox segm
+```
 
 
 
@@ -70,3 +92,9 @@ If you find this work useful in your research, please cite:
         year      = {2023},
         pages     = {18982-18992}
     }
+
+
+
+## Acknowledgement
+
+Thanks MMDetection team for the wonderful open source project!
