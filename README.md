@@ -3,6 +3,8 @@
 This repo is the official implementation of the ICCV 2023 paper **Reconciling Object-Level and Global-Level Objectives for Long-Tail Detection** 
 by Shaoyu Zhang, Chen Chen, and Silong Peng.
 
+![framework](resources/rog_framework.jpg)
+
 
 ## Requirements 
 - Python 3.6+
