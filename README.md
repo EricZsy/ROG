@@ -3,7 +3,7 @@
 This repo is the official implementation of the ICCV 2023 paper **Reconciling Object-Level and Global-Level Objectives for Long-Tail Detection** 
 by Shaoyu Zhang, Chen Chen, and Silong Peng.
 
-[comment]: <> (![framework]&#40;resources/rog_framework.jpg&#41;)
+![framework](resources/rog_framework.jpg)
 
 
 ## Requirements 
