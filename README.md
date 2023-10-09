@@ -22,7 +22,7 @@ cd ROG
 # Create conda environment.
 conda create --name rog python=3.8 -y 
 conda activate rog
-conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=11.3 -c pytorch -c conda-forge
+conda install pytorch torchvision torchaudio cudatoolkit
 
 # Install mmcv and mmdetection.
 pip install -U openmim
@@ -70,9 +70,10 @@ python tools/train.py configs/rog/rog_r50_sample1e-3_1x.py
 bash ./tools/dist_train.sh configs/rog/rog_r50_sample1e-3_1x.py 4
 ```  
 Other configs can be found at ./configs/rog/. 
+You may also use custom loss or sampling method with ROG.
 
 
-### 4. Inference
+### 4. Test
 Use the following commands to test a trained model. 
 ```test
 bash ./tools/dist_test.sh \
