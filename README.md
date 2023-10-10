@@ -87,13 +87,12 @@ bash ./tools/dist_test.sh \
 ## Citation
 If you find this work useful in your research, please cite:
 
-	@InProceedings{Zhang_2023_ICCV,
-        author    = {Zhang, Shaoyu and Chen, Chen and Peng, Silong},
-        title     = {Reconciling Object-Level and Global-Level Objectives for Long-Tail Detection},
-        booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-        month     = {October},
-        year      = {2023},
-        pages     = {18982-18992}
+	@inproceedings{zhang2023reconciling,
+        title={Reconciling Object-Level and Global-Level Objectives for Long-Tail Detection},
+        author={Zhang, Shaoyu and Chen, Chen and Peng, Silong},
+        booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+        pages={18982--18992},
+        year={2023}
     }
 
 
