@@ -11,6 +11,10 @@ model = dict(
             num_classes=1203,
             gamma=1.0,
             lam=0.1,
+            loss_cls=dict(
+                type='SigmoidCrossEntropyLoss',
+                num_classes=1203,
+                loss_weight=1.0)
             ),
         mask_head=dict(num_classes=1203,
                        )),
